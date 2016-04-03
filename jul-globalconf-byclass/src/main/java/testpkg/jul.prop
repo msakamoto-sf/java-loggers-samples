@@ -1,0 +1,24 @@
+handlers= java.util.logging.FileHandler, java.util.logging.ConsoleHandler
+
+.level=ALL
+
+java.util.logging.FileHandler.level = INFO
+java.util.logging.FileHandler.encoding = UTF-8
+java.util.logging.FileHandler.limit = 0
+#java.util.logging.FileHandler.limit = 1024
+#java.util.logging.FileHandler.count = 5
+java.util.logging.FileHandler.pattern = demo-%u-%g.log
+java.util.logging.FileHandler.append = true
+java.util.logging.FileHandler.formatter = java.util.logging.SimpleFormatter
+
+java.util.logging.ConsoleHandler.level=ALL
+java.util.logging.ConsoleHandler.formatter=java.util.logging.SimpleFormatter
+
+java.util.logging.SimpleFormatter.format=%4$s: %5$s [%1$tc]%n
+java.util.logging.SimpleFormatter.format=[%1$tFT %1$tT,%1$tL+%1$tZ] (src:%2$s)<log:%3$s> %4$s - %5$s %6$s%n
+
+p1.level = ALL
+p1.p12.level = WARNING
+p1.p12.p13.level = ALL
+p2.level = WARNING
+p2.p22.level = FINE
