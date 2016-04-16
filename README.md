@@ -88,6 +88,8 @@ SiftingAppender を使ったほうがslf4j + logbackの流儀の範囲内で、�
 
 一つのLoggerで、MDCや他の情報ソースを使ってログファイルを分離したい場合などに、logbackのSiftingAppenderを検討したい。
 
+ * Chapter 4: Appenders , SiftingAppender
+   * http://logback.qos.ch/manual/appenders.html#SiftingAppender
  * Logback – different log file for each thread
    * http://www.mkyong.com/logging/logback-different-log-file-for-each-thread/
  * Logback - how to get each logger logging to a seperate log file? - Stack Overflow
