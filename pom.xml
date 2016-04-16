@@ -18,11 +18,9 @@
     <module>jul-globalconf-byfile</module>
     <module>jul-globalconf-byclass</module>
     <module>jul-create-logger</module>
-    <!--
-    <module>logback-config-demo-xml</module>
-    <module>logback-config-demo-groovy</module>
+    <module>logback-conf-xml</module>
+    <module>logback-conf-groovy</module>
     <module>logback-create-logger</module>
-    -->
   </modules>
 
   <build>
@@ -39,29 +37,6 @@
             <target>${java.version}</target>
           </configuration>
         </plugin>
-<!--
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-shade-plugin</artifactId>
-          <version>2.4.3</version>
-          <executions>
-            <execution>
-              <phase>package</phase>
-              <goals>
-                <goal>shade</goal>
-              </goals>
-              <configuration>
-                <createDependencyReducedPom>false</createDependencyReducedPom>
-                <transformers>
-                  <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                    <mainClass>testpkg.Main</mainClass>
-                  </transformer>
-                </transformers>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
--->
       </plugins>
     </pluginManagement>
   </build>
