@@ -21,6 +21,7 @@
     <module>logback-conf-xml</module>
     <module>logback-conf-groovy</module>
     <module>logback-create-logger</module>
+    <module>logback-sift-demo</module>
   </modules>
 
   <build>

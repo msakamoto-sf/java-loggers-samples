@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<configuration>
+
+  <appender name="AGENTLOG" class="ch.qos.logback.classic.sift.SiftingAppender">
+    <discriminator>
+      <key>agentName</key>
+      <defaultValue>NullAgent</defaultValue>
+    </discriminator>
+    <sift>
+      <appender name="FILE-${agentId}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/${agentName}/agent.log</file>
+        <append>false</append>
+        <encoder>
+          <Pattern>%d{ISO8601} %-5level,[%thread] %mdc [%marker] %logger - %msg%n</Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+          <FileNamePattern>logs/${agentName}/agent.%i.log</FileNamePattern>
+          <MinIndex>1</MinIndex>
+          <MaxIndex>10</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+          <MaxFileSize>500KB</MaxFileSize>
+        </triggeringPolicy>
+      </appender>
+    </sift>
+  </appender>
+
+  <appender name="COMMONFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>logs/common.log</file>
+    <append>false</append>
+    <encoder>
+      <Pattern>%d{ISO8601} %-5level,[%thread]=[%marker] %logger - %msg%n</Pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+      <FileNamePattern>logs/common.%i.log</FileNamePattern>
+      <MinIndex>1</MinIndex>
+      <MaxIndex>10</MaxIndex>
+    </rollingPolicy>
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <MaxFileSize>1MB</MaxFileSize>
+    </triggeringPolicy>
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+     <encoder>
+      <Pattern>%d{ISO8601} %-5level [%thread] %logger - %msg%n</Pattern>
+    </encoder>
+  </appender>
+
+  <logger name="testpkg.AgentLogger" level="INFO" additivity="false">
+    <appender-ref ref="COMMONFILE" />
+    <appender-ref ref="AGENTLOG" />
+  </logger>
+
+  <root level="TRACE">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
