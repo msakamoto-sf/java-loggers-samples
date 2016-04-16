@@ -6,9 +6,9 @@
     <artifactId>java-loggers-samples</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>logback-conf-xml</artifactId>
+  <artifactId>logback-sift-demo</artifactId>
   <packaging>jar</packaging>
-  <name>slf4j and logback-classic configuration by xml</name>
+  <name>slf4j MDC and logback-classic SiftingAppender Demo</name>
 
   <dependencies>
     <dependency>
