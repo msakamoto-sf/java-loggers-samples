@@ -99,6 +99,11 @@ SiftingAppender を使ったほうがslf4j + logbackの流儀の範囲内で、�
 
 ## その他の参考URLメモ
 
+ * Logback 使い方メモ - Qiita
+   * https://qiita.com/opengl-8080/items/49719f2d35171f017aa9
+ * logback で出すログを強制的に１行にして収集しやすく・運用しやすくする - Qiita
+   * https://qiita.com/roundrop@github/items/8989b7f29d70f618e503
+
 ### ログのパフォーマンス系
 
  * Benchmarking Java Logging Frameworks
